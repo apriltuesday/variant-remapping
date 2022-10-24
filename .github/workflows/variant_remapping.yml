@@ -2,7 +2,7 @@ name: Variant Remapping
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, fix-test ]
   pull_request:
     branches: [ master ]
 
@@ -21,8 +21,6 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        # Install dependencies
-        sudo apt-get install libgsl0-dev
         # Install Nextflow
         mkdir /tmp/nextflow && cd /tmp/nextflow
         wget -qO- get.nextflow.io | bash
